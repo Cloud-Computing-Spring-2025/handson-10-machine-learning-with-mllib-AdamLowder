@@ -12,6 +12,7 @@ This project uses Apache Spark MLlib to predict customer churn based on structur
 1. Dataset: Create the dataset with dataset-generator.py
 
 # Tasks
+
 ## Task 1: Data Preprocessing
 The first task involves cleaning and preparing the data for machine learning:
 1. Handle Missing Data: Missing values in the TotalCharges column are replaced with 0.
@@ -35,10 +36,16 @@ In this task, multiple models are trained and evaluated:
 2. Hyperparameter Tuning: Hyperparameters are tuned using cross-validation.
 3. Model Comparison: Best AUC scores and hyperparameters are displayed for each model.
 
-Execution
+# Execution
 
 1. pip install pyspark
 2. spark-submit customer_churn_analysis.py
+
+# Issues Faced
+
+1. Had some initial problems with setting up task 2 and 4, but some examples online helped me to understand the Logistic Regression, Decision Tree, Random Forest, and GBT a little better
+2. Had a few small dependency and synax errors towards execution time but plugging into GPT and asking it to help fix it worked and helped to add comments to the final resulting code.
+3. I'm not sure if you'd like me to find a way to cut out all the execution INFO messages, but scrolling through the results I did find the outputs from the functions. It seems like a mess of IFO messages wen I run these though.
 ---
 
 Build and compare machine learning models using PySpark to predict whether a customer will churn based on their service usage and subscription features.
