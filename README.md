@@ -6,7 +6,40 @@ This project uses Apache Spark MLlib to predict customer churn based on structur
 
 ---
 
+# Prerequisites
+1. Apache Spark: Install Apache Spark and set up the environment to run PySpark
+1. Python: Ensure Python is installed
+1. Dataset: Create the dataset with dataset-generator.py
 
+# Tasks
+## Task 1: Data Preprocessing
+The first task involves cleaning and preparing the data for machine learning:
+1. Handle Missing Data: Missing values in the TotalCharges column are replaced with 0.
+2. Categorical Feature Encoding: Categorical columns (gender, PhoneService, InternetService) are indexed and one-hot encoded.
+3. Feature Assembly: Features are assembled into a single feature vector for use in machine learning models.
+4. Label Encoding: The target variable Churn is indexed to be used as the label in model training.
+
+## Task 2: Logistic Regression Model
+In this task, a Logistic Regression model is trained to predict customer churn:
+1. Split the Data: Data is split into training (80%) and test (20%) sets.
+2. Train Model: Logistic Regression is applied using the features column and label.
+3. Evaluate Model: Model performance is evaluated using Area Under the ROC Curve (AUC).
+
+Task 3: Feature Selection
+1. Chi-Square feature selection is applied to select the top 5 features based on their correlation with the target label (Churn):
+1. Chi-Square Selector: The Chi-Square selector is used to pick the most relevant features.
+
+## Task 4: Hyperparameter Tuning and Model Comparison
+In this task, multiple models are trained and evaluated:
+1. Models: Logistic Regression, Decision Tree, Random Forest, and GBT (Gradient Boosting Trees).
+2. Hyperparameter Tuning: Hyperparameters are tuned using cross-validation.
+3. Model Comparison: Best AUC scores and hyperparameters are displayed for each model.
+
+Execution
+
+1. pip install pyspark
+2. spark-submit customer_churn_analysis.py
+---
 
 Build and compare machine learning models using PySpark to predict whether a customer will churn based on their service usage and subscription features.
 
